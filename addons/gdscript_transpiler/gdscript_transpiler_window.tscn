@@ -1,0 +1,127 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/gdscript_transpiler/gdscript_transpiler_window.gd" type="Script" id=1]
+
+[node name="window" type="AcceptDialog"]
+visible = true
+margin_right = 300.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 600, 480 )
+focus_mode = 2
+window_title = "GDScript Transpiler"
+resizable = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body" type="VBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 584.0
+margin_bottom = 411.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="script" type="VBoxContainer" parent="body"]
+margin_right = 568.0
+margin_bottom = 78.0
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="body/script"]
+margin_right = 568.0
+margin_bottom = 25.0
+text = "Select Script"
+
+[node name="hbox" type="HBoxContainer" parent="body/script"]
+margin_top = 33.0
+margin_right = 568.0
+margin_bottom = 78.0
+
+[node name="path" type="LineEdit" parent="body/script/hbox"]
+margin_right = 455.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="button" type="Button" parent="body/script/hbox"]
+margin_left = 463.0
+margin_right = 568.0
+margin_bottom = 45.0
+text = "Browse"
+
+[node name="language" type="VBoxContainer" parent="body"]
+margin_top = 94.0
+margin_right = 568.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="body/language"]
+margin_right = 568.0
+margin_bottom = 25.0
+text = "Target Language"
+
+[node name="container" type="PanelContainer" parent="body/language"]
+margin_top = 33.0
+margin_right = 568.0
+margin_bottom = 98.0
+
+[node name="panel" type="Panel" parent="body/language/container"]
+margin_left = 14.0
+margin_top = 14.0
+margin_right = 554.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="option" type="OptionButton" parent="body/language/container"]
+margin_left = 14.0
+margin_top = 14.0
+margin_right = 554.0
+margin_bottom = 51.0
+
+[node name="output" type="VBoxContainer" parent="body"]
+margin_top = 208.0
+margin_right = 568.0
+margin_bottom = 286.0
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="body/output"]
+margin_right = 568.0
+margin_bottom = 25.0
+text = "Output Path"
+
+[node name="hbox" type="HBoxContainer" parent="body/output"]
+margin_top = 33.0
+margin_right = 568.0
+margin_bottom = 78.0
+
+[node name="path" type="LineEdit" parent="body/output/hbox"]
+margin_right = 455.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="button" type="Button" parent="body/output/hbox"]
+margin_left = 463.0
+margin_right = 568.0
+margin_bottom = 45.0
+text = "Browse"
+
+[node name="script_dialog" type="FileDialog" parent="."]
+margin_right = 645.0
+margin_bottom = 248.0
+
+[node name="output_dialog" type="FileDialog" parent="."]
+margin_right = 645.0
+margin_bottom = 248.0
+[connection signal="confirmed" from="." to="." method="_on_window_confirmed"]
+[connection signal="pressed" from="body/script/hbox/button" to="." method="_on_script_button_pressed"]
+[connection signal="pressed" from="body/output/hbox/button" to="." method="_on_output_button_pressed"]
+[connection signal="confirmed" from="script_dialog" to="." method="_on_script_dialog_confirmed"]
+[connection signal="confirmed" from="output_dialog" to="." method="_on_output_dialog_confirmed"]
