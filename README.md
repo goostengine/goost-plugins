@@ -26,5 +26,5 @@ branch for your Godot version:
 
 ## License
 
-The plugins are distributed under the terms of the MIT license, as described in
-the [LICENSE.md](LICENSE.md) file.
+Unless otherwise specified, the plugins and scripts are distributed under the
+terms of the MIT license, as described in the [LICENSE.md](LICENSE.md) file.
