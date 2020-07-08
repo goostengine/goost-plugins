@@ -3,7 +3,7 @@ class_name GoostImageTiling
 # The `tile` and `repeat` methods are initial prototypes for image tiling
 # which are now implemented directly in the GoostImage singleton:
 #
-#    https://github.com/GoostGD/goost/commit/3bcaffab29
+#    https://github.com/goostengine/goost/commit/3bcaffab29
 #
 enum Tile {
 	NONE,
