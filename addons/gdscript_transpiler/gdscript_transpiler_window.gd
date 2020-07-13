@@ -22,8 +22,9 @@ func _ready():
 
 func set_script(p_script):
 	current_script = p_script
-	$body/script/hbox/path.text = current_script.resource_path
-	$body/output/hbox/path.text = current_script.resource_path.get_base_dir()
+	if current_script:
+		$body/script/hbox/path.text = current_script.resource_path
+		$body/output/hbox/path.text = current_script.resource_path.get_base_dir()
 
 	$body/language/container/option.clear()
 	for lang in GDScriptTranspiler.get_supported_languages():
