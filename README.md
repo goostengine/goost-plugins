@@ -6,9 +6,10 @@ extension.
 
 ## List of plugins
 
-| Plugin              | Short description                                | Depends on                                   |
-| ------------------- | ------------------------------------------------ | -------------------------------------------- |
-| GDScript Transpiler | Adds an editor interface for transpiling scripts | `gdscript_transpiler` module (experimental). |
+|        Plugin        |                 Short description                 |                 Depends on                  |
+| -------------------- | ------------------------------------------------- | ------------------------------------------- |
+| `GridLayer`          | Displays infinite grid at run-time.               | `GridRect` class                            |
+| `GDScriptTranspiler` | Adds an editor interface for transpiling scripts. | `gdscript_transpiler` module (experimental) |
 
 ## Compatibility
 
