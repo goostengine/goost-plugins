@@ -15,6 +15,9 @@ func _ready():
 	if not Engine.editor_hint:
 		return
 
+	if not has_grid():
+		return
+
 	# Instantiate a default GridRect with transparent background.
 	var grid = GridRect.new()
 	add_child(grid)
