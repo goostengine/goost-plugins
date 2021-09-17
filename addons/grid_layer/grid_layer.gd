@@ -15,31 +15,29 @@ func _ready():
 	if not Engine.editor_hint:
 		return
 
-	if not has_grid():
-		return
-
 	# Instantiate a default GridRect with transparent background.
-	var grid = GridRect.new()
-	add_child(grid)
-	if get_parent():
-		if get_parent().filename:
-			grid.owner = get_parent()
-		else:
-			grid.owner = get_parent().owner
+	if not has_grid():
+		var grid = GridRect.new()
+		add_child(grid)
+		if get_parent():
+			if get_parent().filename:
+				grid.owner = get_parent()
+			else:
+				grid.owner = get_parent().owner
 
-	grid.origin_axes_visible = true
+		grid.origin_axes_visible = true
 
-	grid.anchor_right = 1.0
-	grid.anchor_bottom = 1.0
-	grid.margin_right = 0.0
-	grid.margin_bottom = 0.0
+		grid.anchor_right = 1.0
+		grid.anchor_bottom = 1.0
+		grid.margin_right = 0.0
+		grid.margin_bottom = 0.0
 
-	var bc = Color()
-	bc.a = 0.0 # Transparent by default.
-	grid.set("custom_colors/background", bc)
-	# Use default colors from GraphEdit.
-	grid.set("custom_colors/line_cell", grid.get_color("grid_minor", "GraphEdit"))
-	grid.set("custom_colors/line_division", grid.get_color("grid_major", "GraphEdit"))
+		var bc = Color()
+		bc.a = 0.0 # Transparent by default.
+		grid.set("custom_colors/background", bc)
+		# Use default colors from GraphEdit.
+		grid.set("custom_colors/line_cell", grid.get_color("grid_minor", "GraphEdit"))
+		grid.set("custom_colors/line_division", grid.get_color("grid_major", "GraphEdit"))
 
 
 func _process(_delta):
